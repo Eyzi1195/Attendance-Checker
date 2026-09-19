@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Santo Rosario Elementary School | Attendance System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="loginPage" class="login-page">
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                <img src="Santo Rosario Elementary School logo.jpg" alt="Santo Rosario Elementary School Logo">
+            </div>
+
+            <h1>Santo Rosario</h1>
+            <p class="login-school-name">Elementary School</p>
+
+            <div class="login-divider"></div>
+
+            <h2>Teacher Login</h2>
+            <p class="login-description">
+                Please enter your teacher ID and Password to continue.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="teacherId">Teacher ID</label>
+
+                    <input
+                        type="text"
+                        id="teacherId"
+                        placeholder="Enter your ID number"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <div id="loginError" class="login-error">
+                    Invalid Teacher ID or Password.
+                </div>
+
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+
+            </form>
+
+            <p class="login-footer">
+                Santo Rosario Elementary School<br>
+                Attendance Monitoring System
+            </p>
+
+        </div>
+
+    </section>
+    <section id="mainWebsite" class="main-website hidden">
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="Santo Rosario Elementary School logo.jpg"
+                     alt="School Logo">
+
+                <div>
+                    <h2>Santo Rosario</h2>
+                    <span>Elementary School</span>
+                </div>
+
+            </div>
+            <nav class="navigation">
+
+                <button class="nav-item active" data-page="home">
+
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+
+                </button>
+
+                <button class="nav-item" data-page="record">
+
+                    <span class="nav-icon">▣</span>
+                    <span>Record</span>
+
+                </button>
+
+                <button class="nav-item" data-page="about">
+
+                    <span class="nav-icon">ⓘ</span>
+                    <span>About Us</span>
+
+                </button>
+
+            </nav>
+            <div class="sidebar-bottom">
+
+                <div class="teacher-mini-profile">
+
+                    <div class="teacher-avatar">
+                        T
+                    </div>
+
+                    <div>
+                        <strong id="teacherName">
+                            Teacher
+                        </strong>
+
+                        <span>
+                            Teacher Account
+                        </span>
+                    </div>
+
+                </div>
+
+                <button id="logoutButton" class="logout-button">
+                    Logout
+                </button>
+
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="topbar">
+
+                <div>
+                    <p class="topbar-label">
+                        Attendance Monitoring System
+                    </p>
+
+                    <h1 id="pageTitle">
+                        Home
+                    </h1>
+                </div>
+
+                <div class="topbar-profile">
+
+                    <div class="teacher-avatar">
+                        T
+                    </div>
+
+                    <div>
+                        <strong>Teacher</strong>
+                        <span>Teacher Account</span>
+                    </div>
+
+                </div>
+
+            </header>
+            <section id="homePage" class="page active-page">
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <p class="section-label">
+                            Welcome back!
+                        </p>
+
+                        <h2>
+                            Good morning, Teacher!!!
+                        </h2>
+
+                        <p>
+                            Manage and monitor student attendance
+                            through the school attendance system.
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="scan-card">
+
+                    <div class="scan-content">
+
+                        <div class="scan-icon">
+                            QR
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Scan for Attendance
+                            </h2>
+
+                            <p>
+                                Scan the student's QR code using
+                                your device camera to record attendance.
+                            </p>
+
+                            <button id="scanButton" class="scan-button">
+                                Scan for Attendance
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-card">
+
+                        <span class="card-label">
+                            Today's Attendance
+                        </span>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Students recorded today
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <span class="card-label">
+                            Present
+                        </span>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Students present
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <span class="card-label">
+                            Absent
+                        </span>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Students absent
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section id="recordPage" class="page">
+
+                <div class="page-header">
+
+                    <div>
+                        <p class="section-label">
+                            Attendance Records
+                        </p>
+
+                        <h2>
+                            Student Attendance
+                        </h2>
+
+                        <p>
+                            View attendance records of students.
+                        </p>
+                    </div>
+
+                    <button class="export-button">
+                        Export Record
+                    </button>
+
+                </div>
+
+
+                <div class="record-card">
+
+                    <div class="record-header">
+
+                        <h3>
+                            Attendance Record
+                        </h3>
+
+                        <input
+                            type="text"
+                            id="searchRecord"
+                            placeholder="Search student..."
+                        >
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Student ID
+                                    </th>
+
+                                    <th>
+                                        Student Name
+                                    </th>
+
+                                    <th>
+                                        Grade
+                                    </th>
+
+                                    <th>
+                                        Time
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="attendanceTable">
+
+                                <tr>
+
+                                    <td colspan="5" class="empty-record">
+                                        No attendance records yet.
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section id="aboutPage" class="page">
+
+                <div class="about-card">
+
+                    <div class="about-logo">
+
+                        <img
+                            src="Santo Rosario Elementary School logo.jpg"
+                            alt="Santo Rosario Elementary School Logo"
+                        >
+
+                    </div>
+
+                    <h2>
+                        Santo Rosario Elementary School
+                    </h2>
+
+                    <p class="about-subtitle">
+                        Attendance Monitoring System
+                    </p>
+
+                    <div class="about-divider"></div>
+
+                    <p>
+                        This system is designed to help teachers
+                        efficiently monitor and manage student
+                        attendance using a QR-based attendance
+                        system.
+                    </p>
+
+                    <div class="about-info">
+
+                        <div>
+                            <strong>School</strong>
+                            <span>
+                                Santo Rosario Elementary School
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>System</strong>
+                            <span>
+                                Student Attendance Monitoring
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>Access</strong>
+                            <span>
+                                Authorized Teachers
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+    <div id="scannerModal" class="modal">
+
+        <div class="scanner-modal-content">
+
+            <button id="closeScanner" class="close-modal">
+                ×
+            </button>
+
+            <div class="scanner-placeholder">
+
+                <div class="camera-icon">
+                    ▣
+                </div>
+
+                <h2>
+                    QR Scanner
+                </h2>
+
+                <p>
+                    Camera scanner will be integrated here.
+                </p>
+
+                <div class="camera-box">
+                    Camera Preview
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
